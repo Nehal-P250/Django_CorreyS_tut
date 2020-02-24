@@ -1,0 +1,35 @@
+{% extends "blog/base.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="content-section">
+        
+        <!-- CSRF token or a cross-site request forgery token and this will protect our form against certain attacks so it's
+        just some added security that Django requires so we're gonna need to add this to every form -->
+        <form method="POST">
+            
+            {% csrf_token %}
+            
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join</legend>
+                {{ form|crispy }}
+            </fieldset>
+
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit" >Sign Up</button>
+            </div>
+
+        </form>
+        <div class ="border-top pt-3">
+            
+            <small class="text-muted">Already have on account ?<a href="#" class="ml-2" >Sing In</a></small>
+
+        </div>
+
+    </div>
+
+{% endblock content %}
+
+
+
+

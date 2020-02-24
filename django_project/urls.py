@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from users import views as user_views
 
 """
 so whenever we enter a url it is first checks in this file if it is found then it redirects it to 
@@ -36,5 +37,6 @@ remaining after we chop off blog so it's just going to send an empty string to b
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/',user_views.register, name='register'),
     path('',include('blog.urls')),
 ]
