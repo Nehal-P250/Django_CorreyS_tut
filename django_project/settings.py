@@ -30,7 +30,21 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# VIDEO 3
+# whenever we create a new app in our project we need to add it in this ISTALLED_APPS list
+# the name to be added is like 
+# app_name.apps.xyz 
+# where xyz is the name of the class in the apps.py file in the respective app folder
+# ex.
+# if we want to add blog app to the list then we add 
+# 'blog.apps.BlogConfig'
+
+
+
+
+
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
